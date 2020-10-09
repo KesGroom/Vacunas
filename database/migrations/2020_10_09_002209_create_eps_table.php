@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateUsersTable extends Migration
+class CreateEpsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,15 +13,14 @@ class CreateUsersTable extends Migration
      */
     public function up()
     {
-        Schema::create('users', function (Blueprint $table) {
+        Schema::create('eps', function (Blueprint $table) {
             $table->engine = 'InnoDB';
             $table->increments('id');
             $table->string('name', 50);
-            $table->string('lastname', 50);
-            $table->string('NIP', 10)->unique();
-            $table->date('date_of_birth');
-            $table->enum('document_type', ['RC', 'TI', 'CC']);
-
+            $table->string('adress', 50);
+            $table->string('phone', 10);
+            $table->string('code_access', 10);
+            $table->string('password', 50);
             $table->timestamps();
         });
     }
@@ -33,6 +32,6 @@ class CreateUsersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('users');
+        Schema::dropIfExists('eps');
     }
 }
