@@ -24,6 +24,7 @@ class AddForeignKeyVaccinesTable extends Migration
                 ->references('id')->on('vvc')
                 ->onDelete('cascade')
                 ->onUpdate('cascade');
+                
         });
     }
 
