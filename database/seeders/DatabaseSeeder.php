@@ -15,6 +15,9 @@ class DatabaseSeeder extends Seeder
     {
         // \App\Models\User::factory(10)->create();
         $this->call(EPSSeeder::class);
+        $this->call(UserSeeder::class);      
         $this->call(OfficialSeeder::class);
+        $this->call(VVCSeeder::class);
+        $this->call(VaccineSeeder::class);        
     }
 }

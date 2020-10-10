@@ -16,17 +16,9 @@ class OfficialSeeder extends Seeder
      */
     public function run()
     {
-        $user = new User();
-        $user->NIP = "1007228390";
-        $user->name = "Kevin Esteven";
-        $user->lastname = "Sanchez Gomez";
-        $user->date_of_birth = "1999-08-01";
-        $user->document_type = "CC";
-        $user->save();
-
         $official = new Official();
 
-        $official->id = $user->NIP;
+        $official->id = User::where('NIP', '1007228390')->first()->NIP;
         $official->email = "kesgroom@gmail.com";
         $official->password = "Kesito080117";
         $official->phone = "3133734481";

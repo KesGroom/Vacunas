@@ -18,11 +18,11 @@ class CreateVvcTable extends Migration
             $table->string('scanned_image');
             $table->string('no_civil_registry');
             $table->enum('gender',['Masculino', 'Femenino']);
-            $table->string('weight');
-            $table->string('name_responsible');
-            $table->string('adress_responsible');
-            $table->string('city_responsible');
-            $table->string('institution_name');
+            $table->string('weight',10);
+            $table->string('name_responsible',80);
+            $table->string('address_responsible',80);
+            $table->string('city_responsible',50);
+            $table->string('institution_name',80);
             $table->timestamps();
         });
     }
