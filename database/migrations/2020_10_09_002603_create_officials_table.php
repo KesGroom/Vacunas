@@ -15,16 +15,15 @@ class CreateOfficialsTable extends Migration
     {
         Schema::create('officials', function (Blueprint $table) {
             $table->engine = 'InnoDB';
-            $table->increments('id');
             $table->string('email',100)->unique();
             $table->string('password', 50);
             $table->string('phone', 10);
             $table->string('address', 50);
             $table->string('profession', 50);
             $table->string('position', 50);
-            
+
             $table->rememberToken();
-            $table->timestamps();           
+            $table->timestamps();
         });
     }
 
