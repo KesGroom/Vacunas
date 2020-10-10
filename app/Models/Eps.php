@@ -6,29 +6,22 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Notifications\Notifiable;
 
-class Official extends Model
+class Eps extends Model
 {
     use HasFactory, Notifiable;
 
-    protected $fillable=[
-        'id',
-        'email',
-        'password',
-        'phone',
+    protected $table = 'eps';
+    protected $fillable = [
+
+        'name',
         'address',
-        'profession',
-        'position',
+        'phone',
+        'code_access',
         'password'
 
     ];
 
-        /**
-     * The attributes that should be hidden for arrays.
-     *
-     * @var array
-     */
     protected $hidden = [
         'password',
-        'remember_token'
     ];
 }

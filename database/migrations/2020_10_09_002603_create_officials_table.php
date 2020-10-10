@@ -22,6 +22,7 @@ class CreateOfficialsTable extends Migration
             $table->string('address', 50);
             $table->string('profession', 50);
             $table->string('position', 50);
+            
             $table->rememberToken();
             $table->timestamps();           
         });

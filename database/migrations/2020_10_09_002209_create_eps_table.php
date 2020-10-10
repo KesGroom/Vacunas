@@ -17,9 +17,9 @@ class CreateEpsTable extends Migration
             $table->engine = 'InnoDB';
             $table->increments('id');
             $table->string('name', 50);
-            $table->string('adress', 50);
+            $table->string('address', 50);
             $table->string('phone', 10);
-            $table->string('code_access', 10);
+            $table->string('code_access', 9);
             $table->string('password', 50);
             $table->timestamps();
         });
