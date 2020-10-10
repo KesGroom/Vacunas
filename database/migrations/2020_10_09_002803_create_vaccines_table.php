@@ -16,12 +16,12 @@ class CreateVaccinesTable extends Migration
         Schema::create('vaccines', function (Blueprint $table) {
             $table->engine = 'InnoDB';
             $table->increments('id');
-            $table->integer('age_patient');
+            $table->bigInteger('age_patient');
             $table->string('name_vaccine', 80);
             $table->string('dose_vaccine', 50);
             $table->date('application_date');
             $table->string('laboratory', 80);
-            $table->string('batch_number', 50);
+            $table->bigInteger('batch_number');
             $table->string('IPS', 80);
             $table->date('reinforcement')->nullable();
             $table->timestamps();
