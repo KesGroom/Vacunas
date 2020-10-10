@@ -14,12 +14,12 @@ class AddForeignKeyVvcTable extends Migration
     public function up()
     {
         Schema::table('vvc', function (Blueprint $table) {
-            $table->integer('user_id')->unsigned();
-            $table->foreign('user_id')
-                ->references('id')->on('users')
+            $table->string('id',10)->primary();
+            $table->foreign('id')
+                ->references('NIP')->on('users')
                 ->onDelete('cascade')
                 ->onUpdate('cascade');
-            $table->integer('official_id')->unsigned();
+            $table->string('official_id',10);
             $table->foreign('official_id')
                 ->references('id')->on('officials')
                 ->onDelete('cascade')

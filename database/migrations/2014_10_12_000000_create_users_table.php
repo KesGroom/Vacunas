@@ -15,13 +15,11 @@ class CreateUsersTable extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->engine = 'InnoDB';
-            $table->increments('id');
+            $table->string('NIP', 10)->unique()->primary()->comment('Llave primaría designada al NIP de cada usuario');
             $table->string('name', 50);
-            $table->string('lastname', 50);
-            $table->string('NIP', 10)->unique();
+            $table->string('lastname', 50);          
             $table->date('date_of_birth');
             $table->enum('document_type', ['RC', 'TI', 'CC']);
-
             $table->timestamps();
         });
     }

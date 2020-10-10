@@ -14,9 +14,9 @@ class AddForeignKeyOfficialsTable extends Migration
     public function up()
     {
         Schema::table('officials', function (Blueprint $table) {
-            $table->integer('user_id')->unsigned();
-            $table->foreign('user_id')
-                ->references('id')->on('users')
+            $table->string('id',10)->primary();
+            $table->foreign('id')
+                ->references('NIP')->on('users')
                 ->onDelete('cascade')
                 ->onUpdate('cascade');
             $table->integer('eps_id')->unsigned();
@@ -35,7 +35,7 @@ class AddForeignKeyOfficialsTable extends Migration
     public function down()
     {
         Schema::table('officials', function (Blueprint $table) {
-            $table->dropForeign('officials_user_id_foreign');
+            $table->dropForeign('officials_id_foreign');
         });
     }
 }

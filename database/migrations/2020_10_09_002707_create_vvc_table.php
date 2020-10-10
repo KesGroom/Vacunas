@@ -15,7 +15,6 @@ class CreateVvcTable extends Migration
     {
         Schema::create('vvc', function (Blueprint $table) {
             $table->engine = 'InnoDB';
-            $table->increments('id');
             $table->string('scanned_image');
             $table->string('no_civil_registry');
             $table->enum('gender',['Masculino', 'Femenino']);
