@@ -19,8 +19,10 @@ class CreateEpsTable extends Migration
             $table->string('name', 50);
             $table->string('address', 50);
             $table->string('phone', 10);
+            $table->string('state', 50);
+            $table->string('city', 50);
             $table->string('code_access', 9);
-            $table->string('password', 50);
+            $table->string('password');
             $table->timestamps();
         });
     }

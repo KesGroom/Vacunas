@@ -17,7 +17,7 @@ class CreateOfficialsTable extends Migration
             $table->engine = 'InnoDB';
             
             $table->string('email', 100)->unique();
-            $table->string('password', 50);
+            $table->string('password');
             $table->string('phone', 10);
             $table->string('address', 50);
             $table->string('profession', 50);

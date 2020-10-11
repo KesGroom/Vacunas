@@ -14,9 +14,9 @@ class AddForeignKeyVvcTable extends Migration
     public function up()
     {
         Schema::table('vvc', function (Blueprint $table) {
-            $table->string('id',10)->primary();
+            $table->string('id',10)->primary()->unique();
             $table->foreign('id')
-                ->references('NIP')->on('users')
+                ->references('id')->on('users')
                 ->onDelete('cascade')
                 ->onUpdate('cascade');
             $table->string('official_id',10);

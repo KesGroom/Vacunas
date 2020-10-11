@@ -15,7 +15,7 @@ class CreateUsersTable extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->engine = 'InnoDB';
-            $table->string('NIP', 10)->unique()->primary()->comment('Llave primaría designada al NIP de cada usuario');
+            $table->string('id', 10)->unique()->primary()->comment('Llave primaría designada al NIP de cada usuario');
             $table->string('name', 50);
             $table->string('lastname', 50);          
             $table->date('date_of_birth');

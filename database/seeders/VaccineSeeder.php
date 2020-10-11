@@ -16,18 +16,11 @@ class VaccineSeeder extends Seeder
      */
     public function run()
     {
-        $vaccine = new Vaccine();
-
-        $vaccine->vvc_id = Vvc::where('id', '1007228390')->first()->id;
-        $vaccine->official_id = Official::where('id', '1007228390')->first()->id;
-        $vaccine->age_patient = 2;
-        $vaccine->name_vaccine = "Anti Pendejil";
-        $vaccine->dose_vaccine = "50ml";
-        $vaccine->application_date = "2001-05-02";
-        $vaccine->laboratory = "Drogas Pepe";
-        $vaccine->batch_number = 1124;
-        $vaccine->IPS = "Doña Juana";
-        $vaccine->reinforcement = "2005-05-02";
-        $vaccine->save();
+        $carnets=Vvc::all();
+        $carnets->each(function($carnet){
+            Vaccine::factory(6)->create([
+                'vvc_id'=>$carnet->id
+            ]);
+        });
     }
 }

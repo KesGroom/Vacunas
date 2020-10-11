@@ -14,9 +14,9 @@ class AddForeignKeyOfficialsTable extends Migration
     public function up()
     {
         Schema::table('officials', function (Blueprint $table) {
-            $table->string('id',10)->primary();
+            $table->string('id',10)->primary()->unique();
             $table->foreign('id')
-                ->references('NIP')->on('users')
+                ->references('id')->on('users')
                 ->onDelete('cascade')
                 ->onUpdate('cascade');
             $table->integer('eps_id')->unsigned();
