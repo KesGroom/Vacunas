@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\VaccineController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\GraficaController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -17,9 +18,9 @@ use App\Http\Controllers\UserController;
 Route::get('/', function () {
     return view('welcome');
 });
-//mostrar las vacunas 
+//mostrar las vacunas
 Route::get('vaccines/index',[VaccineController::class, 'index'])->name('vaccines.index');
-//mostrar los usuarios 
+//mostrar los usuarios
 Route::get('Users/index',[UserController::class, 'index'])->name('users.index');
 //Formulario de users
 Route::get('Users/{user}/edit',[UserController::class, 'edit'])->name('users.edit');
@@ -27,3 +28,15 @@ Route::get('Users/{user}/edit',[UserController::class, 'edit'])->name('users.edi
 Route::get('Users/{user}/edit',[UserController::class, 'edit'])->name('users.edit');
 //actualizacion de users
 Route::put('Users/{user}',[UserController::class,'update'])->name('users.update');
+
+Route::get('Users/create',function(){
+    return view('Users/create');
+});
+
+Route::get('report/report',function(){
+    return view('report/report');
+});
+
+// Route::get('report', [GraficaController::class, 'forAge'])->name('report.index');
+
+Route::post('report/report',  [GraficaController::class, 'forAge']);
