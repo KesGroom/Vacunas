@@ -7,35 +7,47 @@ use Illuminate\Support\Facades\DB;
 
 class GraficaController extends Controller
 {
-    public function forAge(){
-        // $vacunas = DB::table('vaccines')
-        // ->select(DB::raw('age_patient, count(*) as c_vacunados'))
-        // ->groupBy('age_patient')
-        // ->get();
+    public function forAge()
+    {
+
+        $result = array();
+
+        $vacunas = DB::table('vaccines')
+            ->select(DB::raw('age_patient, count(*) as c_vacunados'))
+            ->groupBy('age_patient')
+            ->get();
+
+        // foreach($vacunas as $row){
+        //     array_push($result, array($row["age_patient"],$row["count(*)"]));
+        // }
         // return view('report.report',compact('vacunas'));
 
-        // return response(json_encode($vacunas),200)->header('Content-type','text/plain');
-        return "hola";
+
+
+        // return view('report.report');
+        // return "hola";
     }
 
-    public function forVaccine(){
+    public function forVaccine()
+    {
         $vacunas = DB::table('vaccines')
-        ->select(DB::raw('name_vaccine, count(*) as c_vacunados'))
-        ->groupBy('name_vaccine')
-        ->get();
+            ->select(DB::raw('name_vaccine, count(*) as c_vacunados'))
+            ->groupBy('name_vaccine')
+            ->get();
         return $vacunas;
     }
 
-    public function forCity(){
+    public function forCity()
+    {
         $vacunas = DB::table('vaccines')
-        ->join('vvc','vaccines.vcc_id','=','vvc.id')
-        ->select(DB::raw('vvc.city_resposible, count(*) as c_vacunados'))
-        ->groupBy('vvc.city_resposible')
-        ->get();
+            ->join('vvc', 'vaccines.vcc_id', '=', 'vvc.id')
+            ->select(DB::raw('vvc.city_resposible, count(*) as c_vacunados'))
+            ->groupBy('vvc.city_resposible')
+            ->get();
         return $vacunas;
     }
 
-    public function forDate(){
-
+    public function forDate()
+    {
     }
 }

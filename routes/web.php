@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\VaccineController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\GraficaController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -33,10 +34,10 @@ Route::get('Users/create',function(){
     return view('Users/create');
 });
 
-Route::get('report/report',function(){
+// Route::get('report/report',[GraficaController::class, 'forAge']);
+
+// Route::post('report/report', [])->name('report.forAge');
+
+Route::get('report/report', function(){
     return view('report/report');
 });
-
-// Route::get('report', [GraficaController::class, 'forAge'])->name('report.index');
-
-Route::post('report/report',  [GraficaController::class, 'forAge']);
