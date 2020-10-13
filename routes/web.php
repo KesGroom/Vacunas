@@ -37,7 +37,12 @@ Route::get('Users/create',function(){
 // Route::get('report/report',[GraficaController::class, 'forAge']);
 
 // Route::post('report/report', [])->name('report.forAge');
+// Route::get('report/report',function(){
+//     return view('report/report');
+// });
 
-Route::get('report/report', function(){
-    return view('report/report');
-});
+// Route::get('report/report', [GraficaController::class, 'forAge'])->name('report.report');
+
+Route::view('report/reporte', 'report/reporte')->name('report.report');
+
+Route::view('report/graficos', 'report/graficos');

@@ -12,7 +12,7 @@
     <tbody>
         @foreach($users as $user)
         <tr>
-            <td>{{$user->NIP}}</td>
+            <td>{{$user->id}}</td>
             <td>{{$user->name}}</td>
             <td>{{$user->lastname}}</td>
             <td>{{$user->date_of_birth}}</td>

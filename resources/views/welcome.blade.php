@@ -32,5 +32,6 @@
             </div>
         </form>
     </div>
+    <a href="{{route('report.report')}}">Grafica</a>
 @endsection
 

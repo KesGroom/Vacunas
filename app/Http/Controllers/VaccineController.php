@@ -16,10 +16,10 @@ class VaccineController extends Controller
     }
     public function index(Request $request){
         $query = trim($request->get('search'));
-        
+
         if ($request) {
             $query = trim($request->get('search'));
-            $vaccines = Vaccine::where('id', 'LIKE' ,'%' . $query . '%')
+            $vaccines = Vaccine::where('vvc_id', 'LIKE' ,'%' . $query . '%')
             ->orderby('id','asc')
             ->get();
             return view('vaccines.index',['vaccines' => $vaccines, 'search' => $query]);

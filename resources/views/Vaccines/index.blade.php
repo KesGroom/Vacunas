@@ -13,11 +13,8 @@
             <th scope="col">Dose vaccine</th>
             <th scope="col">aplicacion date</th>
             <th scope="col">laboratory</th>
-            <th></th>
             <th scope="col">IPS</th>
-            <th></th>
             <th scope="col">reinforcement</th>
-            <th></th>
         </thead>
         <tbody>
             @foreach($vaccines as $vaccine)

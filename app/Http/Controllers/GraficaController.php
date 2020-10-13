@@ -10,20 +10,19 @@ class GraficaController extends Controller
     public function forAge()
     {
 
-        $result = array();
+        // $d = [];
+        // $result = array();
 
-        $vacunas = DB::table('vaccines')
+        $v = DB::table('vaccines')
             ->select(DB::raw('age_patient, count(*) as c_vacunados'))
             ->groupBy('age_patient')
             ->get();
 
-        // foreach($vacunas as $row){
-        //     array_push($result, array($row["age_patient"],$row["count(*)"]));
+        // foreach ($v as $value) {
+        //     array_push($d, [$value->age_patient, $value->c_vacunados]);
         // }
-        // return view('report.report',compact('vacunas'));
 
-
-
+        return view('report.report',compact('v'));
         // return view('report.report');
         // return "hola";
     }
